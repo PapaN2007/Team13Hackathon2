@@ -1,0 +1,17 @@
+1) National Science and Media Museum – The Lumière Brothers
+2) Alice Askins – Mechanical Eye: Early History Motion Pictures
+3) Richard Brown – A New Look at Old History: The Kinetoscope
+4) Jane M. Gaines – Antonia Dickson: The Kineto-Phonograph
+5) HISTORY – First Commercial Movie Screened
+6) Pamela Hutchinson – A Window on Infinity
+7) Peter Domankiewicz – In the Beginning: Cinema's Murky Origin Story
+8) Calculating Empires Millionaire
+9) A "Who Wants to Be a Millionaire" style quiz about early cinema
+10) technology from the Calculating Empires diagram.
+11) Class example.cpp (raylib window, DrawText, game loop pattern)
+12) raylib 5.5 cheatsheet: https://www.raylib.com/cheatsheet/raylib_cheatsheet_v5.5.pdf
+13) raylib examples: https://www.raylib.com/examples.html
+14) raylib colors: https://www.raylib.com/examples/shapes/loader.html?name=shapes_colors_palette
+15) Crawford & Joler, "Calculating Empires": https://calculatingempires.net/
+16) Game logic code written with help from Claude (Anthropic AI), edited by our team.
+17) Question sources are cited inside each Question below.
