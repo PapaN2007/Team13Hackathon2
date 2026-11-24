@@ -25,7 +25,5 @@ extern int current;
 extern int money;                  
 extern int picked;                
 
-// Keys + moving between screens (runs once every frame).
 void UpdateGame(vector<Question> questions);
-// Shows right/wrong, the explanation and what to do next.
 void DrawFeedback(Question q, vector<string> labels,int picked, bool isLastQuestion);

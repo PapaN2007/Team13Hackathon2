@@ -65,8 +65,7 @@ void UpdateGame(vector<Question> questions) {
 }
 
 // Runs every frame after an answer is picked: right/wrong + explanation.
-void DrawFeedback(Question q, vector<string> labels,
-                  int picked, bool isLastQuestion) {
+void DrawFeedback(Question q, vector<string> labels, int picked, bool isLastQuestion) {
     int y = 250;
 
     if (picked == q.correct) {

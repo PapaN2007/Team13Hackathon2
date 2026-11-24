@@ -3,7 +3,7 @@
 #include <string>
 #include <sstream>
 #include "raylib.h"
-#include "Game.h"   // click logic, right/wrong + explanation (GameLogic.cpp)
+#include "Game.h"
 #define NUM_FRAMES  3
 using namespace std;
 /* Used Gemini To help figure out why screen wouldn't stay after clicking enter
@@ -132,6 +132,7 @@ int main() {
 
     // The 4 visible buttons: A, B on top, C, D below (same spots as the 4 DrawTexturePro calls).
     // Used for text placement AND for checking which button was clicked.
+    // Used Gemini to help debug button and make it easier to draw and clickable w text over it.
     Rectangle buttons[4] = {
         { 105 + artOffX, 100 + artOffY, artW, artH },
         { 605 + artOffX, 100 + artOffY, artW, artH },
@@ -147,11 +148,7 @@ int main() {
     and switching back to the start screen
     */
     while (!WindowShouldClose()) {
-        // ---------------- GAME LOGIC ----------------
-        // Keys + moving between screens are in GameLogic.cpp (the button clicks are below)
         UpdateGame(questions);
-
-        // ---------------- DRAWING ----------------
         BeginDrawing();
         ClearBackground(WHITE);
 
@@ -170,12 +167,12 @@ int main() {
             Question q = questions[current];          // current question
             vector<string> labels = choices[current]; // its 4 answers
 
-            // Top row: which question we are on + prize so far
+            //which question we are on + prize so far
             DrawText(TextFormat("Question %d of %d", current + 1, total), 30, 20, 24, WHITE);
             DrawText(TextFormat("Prize: $%d", money), GetScreenWidth() - 230, 20, 24, GOLD);
             DrawText(q.title.c_str(), 600, 60, 24, GOLD);
 
-            // The Question, wrapped onto several lines so long questions fit on the screen
+            //Question wrapped onto several lines so long questions fit on the screen
             DrawWrapped(q.text, 100, 100, 60, 36, WHITE);
 
             /* ADDED all 4 Answer Boxes to the Game Screen - exactly the same 4 calls as before.
@@ -191,11 +188,11 @@ int main() {
             string C = labels[2];
             string D = labels[3];
             /* Text for each answer on each button, centered on the button (same math as before).
-            gained from geeksforgeeks. (https://www.geeksforgeeks.org/cpp/basic_string-c_str-function-in-c-stl/) */
-            DrawText(A.c_str(), 125 + (dest2.width - MeasureText(A.c_str(), 25)) / 2, 125 + (dest2.height - 25) / 2, 25, WHITE);
-            DrawText(B.c_str(), 625 + (dest2.width - MeasureText(B.c_str(), 25)) / 2, 125 + (dest2.height - 25) / 2, 25, WHITE);
-            DrawText(C.c_str(), 125 + (dest2.width - MeasureText(C.c_str(), 25)) / 2, 275 + (dest2.height - 25) / 2, 25, WHITE);
-            DrawText(D.c_str(), 625 + (dest2.width - MeasureText(D.c_str(), 25)) / 2, 275 + (dest2.height - 25) / 2, 25, WHITE);
+            converted string to c_str() gained from geeksforgeeks. (https://www.geeksforgeeks.org/cpp/basic_string-c_str-function-in-c-stl/) */
+            DrawText(A.c_str(), 210 + (dest2.width - MeasureText(A.c_str(), 25)) / 2, 125 + (dest2.height - 25) / 2, 18, WHITE);
+            DrawText(B.c_str(), 710 + (dest2.width - MeasureText(B.c_str(), 25)) / 2, 125 + (dest2.height - 25) / 2, 18, WHITE);
+            DrawText(C.c_str(), 210 + (dest2.width - MeasureText(C.c_str(), 25)) / 2, 275 + (dest2.height - 25) / 2, 18, WHITE);
+            DrawText(D.c_str(), 710 + (dest2.width - MeasureText(D.c_str(), 25)) / 2, 275 + (dest2.height - 25) / 2, 18, WHITE);
             /* Gained From example - sprite button used to read the text on the
             Button and we could be able to switch the text on the button for whenever.
             As well as example - input mouse to get the position of the mouse wherever
