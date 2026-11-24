@@ -2,6 +2,8 @@
 // Functions are written in Game.cpp.
 #include "raylib.h"
 #include "Question.h"
+#include <vector>
+#include <string>
 using namespace std;
 
 // All of our screens.

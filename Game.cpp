@@ -1,6 +1,8 @@
 // Game.cpp - click logic, right/wrong checking and explanation display.
 // Written with help from Claude (Anthropic AI), edited by our team.
 #include "Game.h"
+#include <vector>
+#include <string>
 using namespace std;
 
 // DrawWrapped: draws long text on several lines.
